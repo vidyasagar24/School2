@@ -7,10 +7,13 @@ app = Flask(__name__)
 
 # ---------------- Database Setup ----------------
 def get_db():
-    client = MongoClient(
-        os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
-    )
-    db = client[os.environ.get("MONGO_DB", "school")]
+ #   client = MongoClient(
+ #       os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
+ #   )
+ #   db = client[os.environ.get("MONGO_DB", "school")]
+    client = MongoClient("mongodb+srv://username:password@cluster0.mongodb.net/school")
+    db = client["school"]
+
     return db
 
 db = get_db()
@@ -78,3 +81,4 @@ def search_student():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
