@@ -11,9 +11,8 @@ def get_db():
  #       os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
  #   )
  #   db = client[os.environ.get("MONGO_DB", "school")]
-    client = MongoClient("mongodb+srv://<user>:<password>@cluster0.mongodb.net/school")
+    client = MongoClient("mongodb+srv://vidyasagar24_db_user:Sankeerth29@vidyasagar24.9jjn67j.mongodb.net/school")
     db = client["school"]
-
     return db
 
 db = get_db()
@@ -81,6 +80,7 @@ def search_student():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
